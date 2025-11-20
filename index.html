@@ -246,10 +246,10 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section mesmerizing-bg text-white">
+    <section id="testimonials" class="testimonials section modern-testi-bg text-white">
       <div class="container section-title" data-aos="fade-up">
-        <h2 class="text-white">Testimonials</h2>
-        <p class="text-white">What our patients say about us</p>
+        <h2 class="text-white gradient-text">Testimonials</h2>
+        <p class="text-white-50">What our patients say about us</p>
       </div>
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="swiper init-swiper">
@@ -265,37 +265,71 @@
                 "el": ".swiper-pagination",
                 "type": "bullets",
                 "clickable": true
+              },
+              "breakpoints": {
+                "320": {
+                  "slidesPerView": 1,
+                  "spaceBetween": 40
+                },
+                "1200": {
+                  "slidesPerView": 2,
+                  "spaceBetween": 40
+                }
               }
             }
           </script>
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              <div class="testimonial-card-glass">
+                <i class="bi bi-quote quote-icon-large"></i>
+                <div class="d-flex align-items-center">
+                    <img src="assets/img/person/person-m-1.webp" class="client-img me-3" alt="">
+                    <div class="client-info">
+                        <h3>John Doe</h3>
+                        <h4>Entrepreneur</h4>
+                    </div>
                 </div>
                 <p>
-                  "Excellent service and caring doctors. I felt very comfortable and well taken care of."
+                  "The level of care and attention I received was outstanding. The doctors took the time to explain everything clearly, and the facilities are world-class. I highly recommend HealthCare Clinic."
                 </p>
-                <div class="profile mt-auto">
-                  <img src="assets/img/person/person-m-1.webp" class="testimonial-img" alt="">
-                  <h3>John Doe</h3>
-                  <h4>Patient</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
               </div>
             </div>
              <div class="swiper-slide">
-              <div class="testimonial-item">
+              <div class="testimonial-card-glass">
+                <i class="bi bi-quote quote-icon-large"></i>
+                <div class="d-flex align-items-center">
+                    <img src="assets/img/person/person-f-1.webp" class="client-img me-3" alt="">
+                    <div class="client-info">
+                        <h3>Jane Smith</h3>
+                        <h4>Designer</h4>
+                    </div>
+                </div>
+                <p>
+                  "I was very nervous about my procedure, but the staff made me feel completely at ease. The recovery was faster than I expected, thanks to their excellent post-op care."
+                </p>
                 <div class="stars">
                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="testimonial-card-glass">
+                <i class="bi bi-quote quote-icon-large"></i>
+                <div class="d-flex align-items-center">
+                    <img src="assets/img/person/person-m-2.webp" class="client-img me-3" alt="">
+                    <div class="client-info">
+                        <h3>Robert Johnson</h3>
+                        <h4>Teacher</h4>
+                    </div>
+                </div>
                 <p>
-                  "The facilities are top-notch and the staff is very friendly. Highly recommended!"
+                  "Professional, clean, and efficient. I didn't have to wait long for my appointment, and the diagnosis was spot on. Great team of specialists!"
                 </p>
-                <div class="profile mt-auto">
-                  <img src="assets/img/person/person-f-1.webp" class="testimonial-img" alt="">
-                  <h3>Jane Smith</h3>
-                  <h4>Patient</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
               </div>
             </div>
