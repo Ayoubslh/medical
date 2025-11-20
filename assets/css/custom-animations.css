@@ -1,0 +1,319 @@
+/* Custom Animations for HealthCare Clinic */
+
+/* 1. Ken Burns Effect for Hero Carousel */
+@keyframes kenBurns {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+.carousel-item img {
+    animation: kenBurns 20s ease-in-out infinite alternate;
+    transform-origin: center center;
+}
+
+/* 2. Floating Animation for Images */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+.animate-float {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* 3. Pulse Glow for Buttons */
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 0 0 rgba(4, 158, 187, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(4, 158, 187, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(4, 158, 187, 0); }
+}
+
+.btn-pulse {
+    animation: pulseGlow 2s infinite;
+}
+
+/* 4. Card Hover Effects (Lift & Glow) */
+.service-item, .doctor-card, .info-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.service-item:hover, .doctor-card:hover, .info-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    border-bottom: 3px solid var(--accent-color);
+}
+
+/* 5. Gradient Text Animation */
+@keyframes gradientText {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.gradient-text {
+    background: linear-gradient(45deg, var(--heading-color), var(--accent-color), #20c997);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientText 3s ease infinite;
+}
+
+/* 6. Icon Spin on Hover */
+.service-icon-wrapper i, .icon-wrapper i {
+    transition: transform 0.6s ease-in-out;
+}
+
+.service-item:hover .service-icon-wrapper i,
+.info-card:hover .icon-wrapper i {
+    transform: rotateY(360deg);
+    color: var(--accent-color);
+}
+
+/* 7. Staggered Fade In (Helper class) */
+.stagger-item {
+    opacity: 0;
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 40px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+/* 8. Shimmer Effect for Backgrounds */
+@keyframes shimmer {
+    0% { background-position: -1000px 0; }
+    100% { background-position: 1000px 0; }
+}
+
+.shimmer-bg {
+    background: linear-gradient(to right, #f6f7f8 8%, #edeef1 18%, #f6f7f8 33%);
+    background-size: 1000px 100%;
+    animation: shimmer 2s linear infinite;
+}
+
+/* 9. Mesmerizing Background Gradient for Sections */
+.mesmerizing-bg {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 10. Scroll Reveal with Blur */
+@keyframes slideInBlur {
+    0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.9);
+        filter: blur(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+.scroll-reveal-blur {
+    opacity: 0; /* Hidden initially */
+}
+
+.scroll-reveal-blur.active {
+    animation: slideInBlur 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+/* 11. Progress Bar Filling Animation */
+@keyframes fillBar {
+    from { width: 0; }
+    to { width: var(--target-width); }
+}
+
+.progress-bar-fill {
+    width: 0;
+    transition: width 1.5s ease-out;
+}
+
+.progress-bar-fill.active {
+    width: var(--target-width);
+}
+
+/* 12. Text Filling Effect */
+.text-fill-anim {
+    background: linear-gradient(to right, var(--accent-color) 50%, #ccc 50%);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background-position 1s ease;
+}
+
+.text-fill-anim.active {
+    background-position: 0 0;
+}
+
+/* 13. 3D Card Tilt Effect (requires JS for mouse position, but here is a CSS-only simple version) */
+.card-3d-wrapper {
+    perspective: 1000px;
+}
+
+.card-3d {
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    transform-style: preserve-3d;
+}
+
+.card-3d:hover {
+    transform: rotateY(10deg) rotateX(5deg) translateZ(20px);
+    box-shadow: -20px 20px 30px rgba(0,0,0,0.2);
+}
+
+/* 14. Blob Background Animation */
+@keyframes blobFloat {
+    0% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+
+.blob {
+    position: absolute;
+    filter: blur(40px);
+    z-index: -1;
+    opacity: 0.4;
+    animation: blobFloat 10s infinite alternate;
+}
+
+.blob-1 {
+    top: 10%;
+    left: 10%;
+    width: 300px;
+    height: 300px;
+    background: #ff9a9e;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
+
+.blob-2 {
+    bottom: 10%;
+    right: 10%;
+    width: 350px;
+    height: 350px;
+    background: #a18cd1;
+    border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
+    animation-delay: -5s;
+}
+
+/* 15. Liquid Wave Animation */
+.liquid-stat-card {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    background: #f0f0f0;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 15px;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.1);
+    border: 4px solid #fff;
+}
+
+.liquid-stat-card .liquid {
+    position: absolute;
+    bottom: -100%; /* Start empty */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--accent-color);
+    transition: bottom 2s ease-in-out;
+    z-index: 1;
+}
+
+.liquid-stat-card .liquid::before,
+.liquid-stat-card .liquid::after {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 40%;
+    animation: wave 8s linear infinite;
+}
+
+.liquid-stat-card .liquid::after {
+    border-radius: 35%;
+    background: rgba(255, 255, 255, 0.2);
+    animation: wave 8s linear infinite reverse;
+}
+
+.liquid-stat-card .stat-value {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--heading-color);
+    mix-blend-mode: multiply; /* Cool effect for text over liquid */
+}
+
+@keyframes wave {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Trigger class for JS */
+.liquid-fill.active .liquid {
+    bottom: var(--fill-level, 0%);
+}
+
+/* 16. Parallax Effect */
+.parallax-section {
+    position: relative;
+    overflow: hidden;
+    padding: 100px 0;
+    color: #fff;
+    text-align: center;
+    z-index: 1;
+}
+
+.parallax-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%; /* Taller than container for movement */
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+}
+
+.parallax-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
+    z-index: 0;
+}
+
+.parallax-content {
+    position: relative;
+    z-index: 1;
+}
