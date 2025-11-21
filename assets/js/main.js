@@ -1,17 +1,6 @@
-/**
-* Template Name: MediTrust
-* Template URL: https://bootstrapmade.com/meditrust-bootstrap-hospital-website-template/
-* Updated: Jul 04 2025 with Bootstrap v5.3.7
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
 (function() {
   "use strict";
 
-  /**
-   * Apply .scrolled class to the body as the page is scrolled down
-   */
   function toggleScrolled() {
     const selectBody = document.querySelector('body');
     const selectHeader = document.querySelector('#header');
@@ -22,9 +11,6 @@
   document.addEventListener('scroll', toggleScrolled);
   window.addEventListener('load', toggleScrolled);
 
-  /**
-   * Mobile nav toggle
-   */
   const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
 
   function mobileNavToogle() {
@@ -36,9 +22,6 @@
     mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
   }
 
-  /**
-   * Hide mobile nav on same-page/hash links
-   */
   document.querySelectorAll('#navmenu a').forEach(navmenu => {
     navmenu.addEventListener('click', () => {
       if (document.querySelector('.mobile-nav-active')) {
@@ -48,9 +31,6 @@
 
   });
 
-  /**
-   * Toggle mobile nav dropdowns
-   */
   document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
     navmenu.addEventListener('click', function(e) {
       e.preventDefault();
@@ -60,9 +40,6 @@
     });
   });
 
-  /**
-   * Preloader
-   */
   const preloader = document.querySelector('#preloader');
   if (preloader) {
     window.addEventListener('load', () => {
@@ -70,9 +47,6 @@
     });
   }
 
-  /**
-   * Scroll top button
-   */
   let scrollTop = document.querySelector('.scroll-top');
 
   function toggleScrollTop() {
@@ -91,9 +65,6 @@
   window.addEventListener('load', toggleScrollTop);
   document.addEventListener('scroll', toggleScrollTop);
 
-  /**
-   * Animation on scroll function and init
-   */
   function aosInit() {
     AOS.init({
       duration: 600,
@@ -104,14 +75,8 @@
   }
   window.addEventListener('load', aosInit);
 
-  /**
-   * Initiate Pure Counter
-   */
   new PureCounter();
 
-  /**
-   * Init swiper sliders
-   */
   function initSwiper() {
     document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
       let config = JSON.parse(
@@ -128,9 +93,6 @@
 
   window.addEventListener("load", initSwiper);
 
-  /**
-   * Init isotope layout and filters
-   */
   document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
     let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
     let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
@@ -161,25 +123,16 @@
 
   });
 
-  /**
-   * Initiate glightbox
-   */
   const glightbox = GLightbox({
     selector: '.glightbox'
   });
 
-  /**
-   * Frequently Asked Questions Toggle
-   */
   document.querySelectorAll('.faq-item h3, .faq-item .faq-toggle, .faq-item .faq-header').forEach((faqItem) => {
     faqItem.addEventListener('click', () => {
       faqItem.parentNode.classList.toggle('faq-active');
     });
   });
 
-  /**
-   * Custom Scroll Animations (Intersection Observer)
-   */
   const observerOptions = {
     root: null,
     rootMargin: '0px',
@@ -190,20 +143,14 @@
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('active');
-        // Optional: Stop observing once triggered
-        // observer.unobserve(entry.target); 
       }
     });
   }, observerOptions);
 
-  // Observe elements
   document.querySelectorAll('.progress-bar-fill, .scroll-reveal-blur, .text-fill-anim, .liquid-fill').forEach(el => {
     observer.observe(el);
   });
 
-  /**
-   * 3D Card Tilt Effect (JS part for mouse tracking)
-   */
   document.querySelectorAll('.card-3d').forEach(card => {
     card.addEventListener('mousemove', (e) => {
       const rect = card.getBoundingClientRect();
@@ -212,7 +159,7 @@
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
       
-      const rotateX = ((y - centerY) / centerY) * -10; // Max 10deg rotation
+      const rotateX = ((y - centerY) / centerY) * -10;
       const rotateY = ((x - centerX) / centerX) * 10;
 
       card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
@@ -223,9 +170,6 @@
     });
   });
 
-  /**
-   * Parallax Effect
-   */
   window.addEventListener('scroll', () => {
     const parallaxSections = document.querySelectorAll('.parallax-section');
     
@@ -235,7 +179,6 @@
       const sectionTop = section.offsetTop;
       const sectionHeight = section.offsetHeight;
       
-      // Check if section is in view
       if (scrolled + window.innerHeight > sectionTop && scrolled < sectionTop + sectionHeight) {
         const speed = 0.5;
         const yPos = (scrolled - sectionTop) * speed;

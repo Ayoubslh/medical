@@ -1,6 +1,3 @@
-/* Custom Animations for HealthCare Clinic */
-
-/* 1. Ken Burns Effect for Hero Carousel */
 @keyframes kenBurns {
     0% { transform: scale(1); }
     100% { transform: scale(1.1); }
@@ -11,7 +8,6 @@
     transform-origin: center center;
 }
 
-/* 2. Floating Animation for Images */
 @keyframes float {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-15px); }
@@ -22,7 +18,6 @@
     animation: float 4s ease-in-out infinite;
 }
 
-/* 3. Pulse Glow for Buttons */
 @keyframes pulseGlow {
     0% { box-shadow: 0 0 0 0 rgba(4, 158, 187, 0.7); }
     70% { box-shadow: 0 0 0 15px rgba(4, 158, 187, 0); }
@@ -33,7 +28,6 @@
     animation: pulseGlow 2s infinite;
 }
 
-/* 4. Card Hover Effects (Lift & Glow) */
 .service-item, .doctor-card, .info-card {
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -44,7 +38,6 @@
     border-bottom: 3px solid var(--accent-color);
 }
 
-/* 5. Gradient Text Animation */
 @keyframes gradientText {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -60,7 +53,6 @@
     animation: gradientText 3s ease infinite;
 }
 
-/* 6. Icon Spin on Hover */
 .service-icon-wrapper i, .icon-wrapper i {
     transition: transform 0.6s ease-in-out;
 }
@@ -71,7 +63,6 @@
     color: var(--accent-color);
 }
 
-/* 7. Staggered Fade In (Helper class) */
 .stagger-item {
     opacity: 0;
     animation: fadeInUp 0.5s ease forwards;
@@ -88,7 +79,6 @@
     }
 }
 
-/* 8. Shimmer Effect for Backgrounds */
 @keyframes shimmer {
     0% { background-position: -1000px 0; }
     100% { background-position: 1000px 0; }
@@ -100,7 +90,6 @@
     animation: shimmer 2s linear infinite;
 }
 
-/* 9. Mesmerizing Background Gradient for Sections */
 .mesmerizing-bg {
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 400% 400%;
@@ -113,7 +102,6 @@
     100% { background-position: 0% 50%; }
 }
 
-/* 10. Scroll Reveal with Blur */
 @keyframes slideInBlur {
     0% {
         opacity: 0;
@@ -128,14 +116,13 @@
 }
 
 .scroll-reveal-blur {
-    opacity: 0; /* Hidden initially */
+    opacity: 0;
 }
 
 .scroll-reveal-blur.active {
     animation: slideInBlur 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
 }
 
-/* 11. Progress Bar Filling Animation */
 @keyframes fillBar {
     from { width: 0; }
     to { width: var(--target-width); }
@@ -150,7 +137,6 @@
     width: var(--target-width);
 }
 
-/* 12. Text Filling Effect */
 .text-fill-anim {
     background: linear-gradient(to right, var(--accent-color) 50%, #ccc 50%);
     background-size: 200% 100%;
@@ -165,7 +151,6 @@
     background-position: 0 0;
 }
 
-/* 13. 3D Card Tilt Effect (requires JS for mouse position, but here is a CSS-only simple version) */
 .card-3d-wrapper {
     perspective: 1000px;
 }
@@ -180,7 +165,6 @@
     box-shadow: -20px 20px 30px rgba(0,0,0,0.2);
 }
 
-/* 14. Blob Background Animation */
 @keyframes blobFloat {
     0% { transform: translate(0, 0) scale(1); }
     33% { transform: translate(30px, -50px) scale(1.1); }
@@ -215,7 +199,6 @@
     animation-delay: -5s;
 }
 
-/* 15. Liquid Wave Animation */
 .liquid-stat-card {
     position: relative;
     width: 120px;
@@ -230,7 +213,7 @@
 
 .liquid-stat-card .liquid {
     position: absolute;
-    bottom: -100%; /* Start empty */
+    bottom: -100%;
     left: 0;
     width: 100%;
     height: 100%;
@@ -267,7 +250,7 @@
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--heading-color);
-    mix-blend-mode: multiply; /* Cool effect for text over liquid */
+    mix-blend-mode: multiply;
 }
 
 @keyframes wave {
@@ -275,12 +258,10 @@
     100% { transform: rotate(360deg); }
 }
 
-/* Trigger class for JS */
 .liquid-fill.active .liquid {
     bottom: var(--fill-level, 0%);
 }
 
-/* 16. Parallax Effect */
 .parallax-section {
     position: relative;
     overflow: hidden;
@@ -295,7 +276,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 120%; /* Taller than container for movement */
+    height: 120%;
     background-size: cover;
     background-position: center;
     z-index: -1;
@@ -309,7 +290,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
+    background: rgba(0, 0, 0, 0.6);
     z-index: 0;
 }
 
@@ -318,7 +299,6 @@
     z-index: 1;
 }
 
-/* 17. Modern Testimonials Background */
 .modern-testi-bg {
     background-color: #0f172a;
     background-image: 
@@ -336,7 +316,6 @@
     background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
-/* 18. Glassmorphism Testimonial Card */
 .testimonial-card-glass {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);

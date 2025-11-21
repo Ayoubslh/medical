@@ -45,30 +45,6 @@
     <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.webp" alt=""> -->
-        <svg class="my-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g id="bgCarrier" stroke-width="0"></g>
-          <g id="tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-          <g id="iconCarrier">
-            <path d="M22 22L2 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
-            <path d="M17 22V6C17 4.11438 17 3.17157 16.4142 2.58579C15.8284 2 14.8856 2 13 2H11C9.11438 2 8.17157 2 7.58579 2.58579C7 3.17157 7 4.11438 7 6V22" stroke="currentColor" stroke-width="1.5"></path>
-            <path opacity="0.5" d="M21 22V8.5C21 7.09554 21 6.39331 20.6629 5.88886C20.517 5.67048 20.3295 5.48298 20.1111 5.33706C19.6067 5 18.9045 5 17.5 5" stroke="currentColor" stroke-width="1.5"></path>
-            <path opacity="0.5" d="M3 22V8.5C3 7.09554 3 6.39331 3.33706 5.88886C3.48298 5.67048 3.67048 5.48298 3.88886 5.33706C4.39331 5 5.09554 5 6.5 5" stroke="currentColor" stroke-width="1.5"></path>
-            <path d="M12 22V19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
-            <path opacity="0.5" d="M10 12H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
-            <path opacity="0.5" d="M5.5 11H7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
-            <path opacity="0.5" d="M5.5 14H7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
-            <path opacity="0.5" d="M17 11H18.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
-            <path opacity="0.5" d="M17 14H18.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
-            <path opacity="0.5" d="M5.5 8H7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
-            <path opacity="0.5" d="M17 8H18.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
-            <path opacity="0.5" d="M10 15H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
-            <path d="M12 9V5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-            <path d="M14 7L10 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-          </g>
-        </svg>
-
         <h1 class="sitename">HealthCare Clinic</h1>
       </a>
 
@@ -104,7 +80,7 @@
 
       <div class="title-wrapper">
         <h1 class="gradient-text">Appointment</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+        <p>Make an Appointment with our Best Doctors</p>
       </div>
     </div><!-- End Page Title -->
 
@@ -166,74 +142,100 @@
           <!-- Appointment Form -->
           <div class="col-lg-6">
             <div class="appointment-form-wrapper" data-aos="fade-up" data-aos-delay="200">
-              <form action="forms/appointment.php" method="post" class="appointment-form php-email-form" id="appointmentForm">
+              <form action="forms/appointment.php" method="post" class="appointment-form php-email-form" id="appointmentForm" enctype="multipart/form-data">
                 <div class="row gy-3">
 
                   <div class="col-md-6">
-                    <input type="text" name="name" class="form-control" placeholder="Your Full Name" required>
+                    <input type="text" name="first_name" class="form-control" placeholder="First Name" required>
                   </div>
 
                   <div class="col-md-6">
-                    <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                    <input type="text" name="last_name" class="form-control" placeholder="Last Name" required>
                   </div>
 
                   <div class="col-md-6">
-                    <input type="tel" name="phone" class="form-control" placeholder="Your Phone Number" required pattern="[0-9]{10,}" title="Please enter a valid phone number (digits only)">
+                    <input type="date" name="birthdate" id="birthdate" class="form-control" required>
+                    <small class="text-muted">Birthdate</small>
                   </div>
 
                   <div class="col-md-6">
-                    <input type="date" name="dob" id="dob" class="form-control" placeholder="Date of Birth" required>
-                    <small class="text-muted">Date of Birth</small>
-                  </div>
-
-                  <div class="col-md-6">
-                    <input type="text" name="age" id="age" class="form-control" placeholder="Age" readonly>
-                  </div>
-
-                  <div class="col-md-6">
-                    <input type="date" name="date" id="appointmentDate" class="form-control" required>
-                    <small class="text-muted">Appointment Date</small>
-                  </div>
-
-                  <div class="col-md-6">
-                    <select name="department" class="form-select" required>
-                      <option value="">Select Department</option>
-                      <option value="cardiology">Cardiology</option>
-                      <option value="neurology">Neurology</option>
-                      <option value="orthopedics">Orthopedics</option>
-                      <option value="pediatrics">Pediatrics</option>
-                      <option value="dermatology">Dermatology</option>
-                      <option value="general">General Medicine</option>
-                    </select>
-                  </div>
-
-                  <div class="col-md-6">
-                    <select name="doctor" class="form-select" required>
-                      <option value="">Select Doctor</option>
-                      <option value="dr-johnson">Dr. Sarah Johnson</option>
-                      <option value="dr-martinez">Dr. Michael Martinez</option>
-                      <option value="dr-chen">Dr. Lisa Chen</option>
-                      <option value="dr-patel">Dr. Raj Patel</option>
-                      <option value="dr-williams">Dr. Emily Williams</option>
-                      <option value="dr-thompson">Dr. David Thompson</option>
+                    <select name="gender" class="form-select" required>
+                      <option value="">Select Gender</option>
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                      <option value="other">Other</option>
                     </select>
                   </div>
 
                   <div class="col-12">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="specialConsultation">
-                        <label class="form-check-label" for="specialConsultation">
-                            Special Consultation
-                        </label>
-                    </div>
+                    <select name="requested_service" id="requestedService" class="form-select" required>
+                      <option value="">Select Requested Service</option>
+                      <option value="general">General Consultation</option>
+                      <option value="pediatric">Pediatric Consultation</option>
+                      <option value="dental">Dental Checkup</option>
+                      <option value="physiotherapy">Physiotherapy Session</option>
+                      <option value="vaccination">Vaccination</option>
+                      <option value="lab">Lab Test</option>
+                      <option value="followup">Follow-up Appointment</option>
+                      <option value="special">Special Consultation</option>
+                    </select>
                   </div>
 
-                  <div class="col-12" id="specialReasonGroup" style="display: none;">
-                    <textarea class="form-control" name="special_reason" rows="3" placeholder="Reason for Special Consultation"></textarea>
+                  <div class="col-md-6">
+                    <input type="date" name="preferred_date" id="preferredDate" class="form-control" required>
+                    <small class="text-muted">Preferred Date</small>
+                  </div>
+
+                  <div class="col-md-6">
+                    <select name="preferred_time" class="form-select" required>
+                      <option value="">Select Time Slot</option>
+                      <option value="08:00-09:00">08:00 AM - 09:00 AM</option>
+                      <option value="09:00-10:00">09:00 AM - 10:00 AM</option>
+                      <option value="10:00-11:00">10:00 AM - 11:00 AM</option>
+                      <option value="11:00-12:00">11:00 AM - 12:00 PM</option>
+                      <option value="12:00-13:00">12:00 PM - 01:00 PM</option>
+                      <option value="13:00-14:00">01:00 PM - 02:00 PM</option>
+                      <option value="14:00-15:00">02:00 PM - 03:00 PM</option>
+                      <option value="15:00-16:00">03:00 PM - 04:00 PM</option>
+                      <option value="16:00-17:00">04:00 PM - 05:00 PM</option>
+                      <option value="17:00-18:00">05:00 PM - 06:00 PM</option>
+                    </select>
+                  </div>
+
+                  <div class="col-md-6">
+                    <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+                  </div>
+
+                  <div class="col-md-6">
+                    <input type="tel" name="phone" class="form-control" placeholder="Phone Number" required pattern="[0-9]{10,}" title="Please enter a valid phone number">
                   </div>
 
                   <div class="col-12">
-                    <textarea class="form-control" name="message" rows="5" placeholder="Please describe your symptoms or reason for visit (optional)"></textarea>
+                    <textarea class="form-control" name="address" rows="2" placeholder="Full Address" required></textarea>
+                  </div>
+
+                  <div class="col-12">
+                    <textarea class="form-control" name="allergies_history" rows="3" placeholder="Allergies / Medical History (Please list any known allergies or relevant medical conditions)"></textarea>
+                  </div>
+
+                  <div class="col-12">
+                    <select name="doctor" id="doctorSelect" class="form-select" required>
+                      <option value="">Select a Specific Doctor</option>
+                      <option value="dr-johnson">Dr. Sarah Johnson - General Medicine</option>
+                      <option value="dr-martinez">Dr. Michael Martinez - Pediatrics</option>
+                      <option value="dr-chen">Dr. Lisa Chen - Dental</option>
+                      <option value="dr-patel">Dr. Raj Patel - Physiotherapy</option>
+                      <option value="dr-williams">Dr. Emily Williams - General Medicine</option>
+                      <option value="dr-thompson">Dr. David Thompson - Specialist</option>
+                      <option value="dr-anderson">Dr. Jennifer Anderson - Lab Services</option>
+                      <option value="dr-brown">Dr. Robert Brown - Vaccination</option>
+                    </select>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="medicalFile" class="form-label">Upload Medical File (Optional)</label>
+                    <input type="file" name="medical_file" id="medicalFile" class="form-control" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+                    <small class="text-muted">Accepted formats: PDF, DOC, DOCX, JPG, PNG (Max 5MB)</small>
                   </div>
 
                   <div class="col-12">
@@ -241,7 +243,7 @@
                     <div class="error-message"></div>
                     <div class="sent-message">Your appointment request has been sent successfully. We will contact you shortly!</div>
 
-                    <button type="submit" class="btn btn-appointment btn-pulse w-100">
+                    <button type="submit" class="btn btn-appointment w-100">
                       <i class="bi bi-calendar-plus me-2"></i>Book Appointment
                     </button>
                   </div>
@@ -376,39 +378,72 @@
 
   <script>
     $(document).ready(function() {
-      // Age Calculation
-      $('#dob').change(function() {
-        var dob = new Date($(this).val());
-        var today = new Date();
-        var age = today.getFullYear() - dob.getFullYear();
-        var m = today.getMonth() - dob.getMonth();
-        if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) {
-          age--;
-        }
-        $('#age').val(age);
-      });
-
-      // Dynamic Form - Special Consultation
-      $('#specialConsultation').change(function() {
-        if ($(this).is(':checked')) {
-          $('#specialReasonGroup').slideDown();
-          $('textarea[name="special_reason"]').prop('required', true);
-        } else {
-          $('#specialReasonGroup').slideUp();
-          $('textarea[name="special_reason"]').prop('required', false);
-        }
-      });
-
       // Date Validation - Future Dates Only
       var today = new Date().toISOString().split('T')[0];
-      $('#appointmentDate').attr('min', today);
+      $('#preferredDate').attr('min', today);
+      
+      // Set max date for birthdate to today (can't be born in the future)
+      $('#birthdate').attr('max', today);
       
       // Prevent past dates selection manually
-      $('#appointmentDate').change(function() {
+      $('#preferredDate').change(function() {
           if ($(this).val() < today) {
               alert('Please select a future date for your appointment.');
               $(this).val('');
           }
+      });
+
+      // File size validation
+      $('#medicalFile').change(function() {
+        const file = this.files[0];
+        if (file && file.size > 5 * 1024 * 1024) { // 5MB
+          alert('File size must not exceed 5MB');
+          $(this).val('');
+        }
+      });
+
+      // Service-based doctor filtering
+      const doctorsByService = {
+        'general': ['dr-johnson', 'dr-williams'],
+        'pediatric': ['dr-martinez'],
+        'dental': ['dr-chen'],
+        'physiotherapy': ['dr-patel'],
+        'vaccination': ['dr-brown'],
+        'lab': ['dr-anderson'],
+        'followup': ['dr-johnson', 'dr-williams', 'dr-thompson'],
+        'special': ['dr-thompson']
+      };
+
+      $('#requestedService').change(function() {
+        const service = $(this).val();
+        const doctorSelect = $('#doctorSelect');
+        const allDoctors = doctorSelect.find('option:not(:first)');
+        
+        if (service && doctorsByService[service]) {
+          // Hide all doctors first
+          allDoctors.hide().prop('disabled', true);
+          
+          // Show only relevant doctors
+          doctorsByService[service].forEach(function(doctorValue) {
+            doctorSelect.find('option[value="' + doctorValue + '"]').show().prop('disabled', false);
+          });
+          
+          // Reset selection
+          doctorSelect.val('');
+        } else {
+          // Show all doctors if no service selected
+          allDoctors.show().prop('disabled', false);
+        }
+      });
+
+      // Form validation before submit
+      $('#appointmentForm').submit(function(e) {
+        const phone = $('input[name="phone"]').val();
+        if (phone.length < 10) {
+          e.preventDefault();
+          alert('Please enter a valid phone number with at least 10 digits');
+          return false;
+        }
       });
     });
   </script>
